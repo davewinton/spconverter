@@ -155,6 +155,11 @@ void processDirectory(const fs::path& inPath, Converter& conv, bool recurseMode)
 
 int main(int argc, char* argv[]) {
 
+    if (argc < 2) {
+        std::cerr << "Usage: " << argv[0] << " <input_path>" << std::endl;
+        return 1;
+    }
+
     // Record the start time
     auto start = std::chrono::high_resolution_clock::now();
 
