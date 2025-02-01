@@ -16,7 +16,7 @@
 namespace fs = std::filesystem;
 
 // Set the allowed file extensions that SPconverter can process
-std::vector<std::string> allowedExtensions = {".wav", ".flac", ".ogg", ".mp3"};
+std::vector<std::string> allowedExtensions = {".wav", ".mp3"};
 
 /**
  * @brief Gets the output path for a given input path.
@@ -166,7 +166,7 @@ int main(int argc, char* argv[]) {
     // Initialise the converter
     Converter spconverter;
 
-    // Validate all neccessary paths and convert
+    // Validate all necessary paths and convert
     if (fs::exists(inPath)) {
         if (fs::is_regular_file(inPath) && hasAllowedExtension(inPath)) {
             processFile(inPath, spconverter);
